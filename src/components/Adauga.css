@@ -8,6 +8,11 @@
 
   .row {
     width: 50%;
+    height: 50px;
+  }
+
+  .btn {
+    height: 38px;
   }
 
 

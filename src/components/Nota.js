@@ -19,7 +19,11 @@ const Nota = ({elev}) => {
         if(nota3.length!==0) elev.nota3 = nota3;
         if(nota4.length!==0) elev.nota4 = nota4;
         if(nota5.length!==0) elev.nota5 = nota5;
-        console.log()
+        setNota1('');
+        setNota2('');
+        setNota3('');
+        setNota4('');
+        setNota5('');
         ev.preventDefault();
       };
 

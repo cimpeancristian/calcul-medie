@@ -2,11 +2,9 @@ import React from 'react';
 
 import Table from 'react-bootstrap/Table';
 
-const Afisare = ({elevi}) => {
+const Afisare = ({elevi, clasa}) => {
  
   return (
-    <>
-        <h1>Afisare elevi</h1>
         <Table striped bordered hover>
             <thead>
                 <tr>
@@ -22,7 +20,7 @@ const Afisare = ({elevi}) => {
                 </tr>
             </thead>
             <tbody>
-                {elevi.map((elev,index) => (
+                {elevi.filter(elev=> elev.className===clasa).map((elev,index) => (
                     <tr key={index} >
                         <td>{index+1}</td>
                         <td>{elev.firstName}</td>
@@ -38,8 +36,7 @@ const Afisare = ({elevi}) => {
                     </tr>
                 ))}
             </tbody>
-        </Table>
-    </>);
+        </Table>);
 }
  
 export default Afisare;

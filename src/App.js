@@ -10,12 +10,14 @@ import {
 } from 'react-router-dom';
 
 import Home from './components/Home';
-import Afisare from './components/Afisare';
+import AfisareElevi from './components/AfisareElevi';
 import Adauga from './components/Adauga';
 import AdddNote from './components/AdaugaNota';
+import AddClass from './components/AdaugaClasa';
 
 const App = () => {
   const elevi = [];
+  const listaClase = [];
 
   return (
     <div className="App">
@@ -34,6 +36,9 @@ const App = () => {
             <li>
               <Link to="/adauganota">Adauga Nota</Link>
             </li>
+            <li>
+              <Link to="/adaugaclasa">Adauga Clasa</Link>
+            </li>
           </ul>
 
           <Switch>
@@ -41,13 +46,16 @@ const App = () => {
               <Home />
             </Route>
             <Route path="/adauga">
-              <Adauga elevi={elevi} />
+              <Adauga elevi={elevi} listaClase={listaClase} />
             </Route>
             <Route path="/afisare">
-              <Afisare elevi={elevi} />
+              <AfisareElevi clasa={listaClase} elevi={elevi} />
             </Route>
             <Route path="/adauganota">
               <AdddNote elevi={elevi} />
+            </Route>
+            <Route path="/adaugaclasa">
+              <AddClass listaClase={listaClase} />
             </Route>
           </Switch>
         </div>
