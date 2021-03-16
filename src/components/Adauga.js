@@ -24,7 +24,7 @@ const Adauga = ({elevi}) => {
     <>
         <h1>Adauga elev</h1>
         <Form onSubmit={handleSubmit}>
-            <Row>
+            <Row>           
                 <Col>
                     <Form.Control 
                         placeholder="Nume"

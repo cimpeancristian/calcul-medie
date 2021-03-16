@@ -29,37 +29,32 @@ const Nota = ({elev}) => {
       <Col>
           <div>{`${elev.firstName} ${elev.lastName}`}</div>
       </Col>
-      <Col>
+      <Col> 
           <Form.Control 
-              placeholder="Nota 1"
               value={nota1}
               onChange={e=> setNota1(e.target.value)} 
           />
       </Col>
       <Col>
           <Form.Control 
-              placeholder="Nota 2"
               value={nota2}
               onChange={e=> setNota2(e.target.value)}
           />
       </Col>
       <Col>
           <Form.Control 
-              placeholder="Nota 3"
               value={nota3}
               onChange={e=> setNota3(e.target.value)} 
           />
       </Col>
       <Col>
           <Form.Control 
-              placeholder="Nota 4"
               value={nota4}
               onChange={e=> setNota4(e.target.value)}
           />
       </Col>
       <Col>
           <Form.Control 
-              placeholder="Nota 5"
               value={nota5}
               onChange={e=> setNota5(e.target.value)}
           />
