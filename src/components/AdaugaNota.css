@@ -1,7 +1,16 @@
 #row {
-    display: flex;
+  display: flex;
 }
 
 .element {
-    width: 100px;
+  width: 100px;
+}
+
+.container {
+  display: flex;
+  height: 50px;
+}
+
+.clasa {
+  width: 200px;
 }

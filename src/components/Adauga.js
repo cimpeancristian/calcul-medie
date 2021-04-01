@@ -6,18 +6,27 @@ import Button from 'react-bootstrap/Button';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
+import {ELEVI_API, REFRESH_KEY} from '../utils/constants';
+import Api from '../utils/api';
+
+import {uniqueId} from 'lodash';
+
 import './Adauga.css';
  
-const Adauga = ({elevi, listaClase}) => {
+const Adauga = ({listaClase, setRefreshKey}) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [dropdownValue, setDropdownValue]=useState("Selectare Clasa");
 
-    console.log(elevi);
+    console.log(listaClase);
     
     const handleSubmit = ev => {
         console.log('buton apasat');
-        elevi.push({'firstName': firstName, 'lastName': lastName, 'className': dropdownValue});
+        const [clasa] = listaClase.filter(cls => cls.clasa===dropdownValue);
+        const elevObj = {nume: firstName, prenume: lastName, clasa: clasa.id};
+        Api.post(ELEVI_API, elevObj);
+        setRefreshKey(uniqueId(REFRESH_KEY));
+        // elevi.push({'firstName': firstName, 'lastName': lastName, 'className': dropdownValue});
         setFirstName("");
         setLastName("");
         ev.preventDefault();
@@ -54,7 +63,7 @@ const Adauga = ({elevi, listaClase}) => {
                         title={dropdownValue}
                         disabled={listaClase.length===0}
                     >
-                        {listaClase.map((clasa, index) => <Dropdown.Item key={index} onClick={handleDropdownValue}>{clasa}</Dropdown.Item>)}
+                        {listaClase.map((clasa, index) => <Dropdown.Item key={index} onClick={handleDropdownValue}>{clasa.clasa}</Dropdown.Item>)}
                     </DropdownButton>
                 </Col>
                 <Button 

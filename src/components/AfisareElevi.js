@@ -19,15 +19,15 @@ const AfisareElevi = ({clasa, elevi}) => {
           <ul>
             {clasa.map((cls, index) => (
                 <li key={index}>
-                    <Link to={`/afisare/${cls}`}>{cls}</Link>
+                    <Link to={`/afisare/${cls.clasa}`}>{cls.clasa}</Link>
                 </li>
             ))}  
           </ul>
 
           <Switch>
           {clasa.map((cls, index) => ( 
-            <Route path={`/afisare/${cls}`} key={index}>
-              <Afisare elevi={elevi} clasa={cls} />
+            <Route path={`/afisare/${cls.clasa}`} key={index}>
+              <Afisare elevi={elevi} clasa={cls.clasa} />
             </Route>
            ))}
           </Switch>
