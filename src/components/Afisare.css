@@ -1,0 +1,12 @@
+Table {
+  max-width: 1500px;
+}
+
+Button {
+  margin-bottom: 30px;
+  margin-left: 100px;
+}
+
+td {
+  text-align: center;
+}
