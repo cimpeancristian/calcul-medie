@@ -1,9 +1,14 @@
-#row {
+.row {
   display: flex;
+  flex-wrap: nowrap !important;
 }
 
 .element {
   width: 100px;
+}
+
+.form-control {
+  width: 60px;
 }
 
 .container {

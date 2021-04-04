@@ -3,11 +3,14 @@ import React from 'react';
 import Pdf from 'react-to-pdf';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import {sortResults} from '../utils/constants';
 
 import './Afisare.css';
 
 const Afisare = ({elevi, clasa}) => {
   console.log('elevi', elevi, clasa);
+  sortResults(elevi, 'nume');
+  console.log('elevi sorted', elevi);
   let mediaGenerala = 0;
   let nrElevi = 0; 
   const ref = React.createRef();

@@ -7,3 +7,8 @@ export const NOTA_API = '/nota';
 
 
 export const REFRESH_KEY = 'refreshKey';
+
+export const sortResults = (array, prop) =>  {
+    array.sort((a, b) => (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0))
+    };
+
